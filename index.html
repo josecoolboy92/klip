@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#0f0e17">
+  <meta name="description" content="Klip Studio: a free, open-source video viewer and editor for your phone. Edit like Canva, boost videos to 4K, cast to your TV. Everything stays on your device.">
+  <title>Klip Studio</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&family=Lobster&family=Noto+Sans+Ethiopic:wght@400;700&family=Noto+Serif+Ethiopic:wght@700&family=Oswald:wght@500;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@700;900&family=Poppins:wght@400;700;900&display=swap">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- CREATE (home): formats, templates, projects -->
+  <section id="screen-home" class="screen" aria-label="Create">
+    <header class="app-head">
+      <h1 class="brand"><span class="logo" aria-hidden="true"></span>Klip Studio</h1>
+    </header>
+    <div class="pad">
+      <h2 class="hello">What will you make today?</h2>
+      <div id="formats" class="format-row" role="list"></div>
+      <h3 class="section">Templates</h3>
+      <div id="templates" class="template-row"></div>
+      <div class="row-between section">
+        <h3>Your projects</h3>
+      </div>
+      <div id="projects" class="project-grid"></div>
+    </div>
+  </section>
+
+  <!-- LIBRARY: your videos, photos and music + the viewer -->
+  <section id="screen-library" class="screen" hidden aria-label="Library">
+    <header class="app-head">
+      <h1 class="title">Library</h1>
+      <div class="row">
+        <button id="lib-link" class="btn small" type="button">Add link</button>
+        <button id="lib-import" class="btn small primary" type="button">+ Import</button>
+      </div>
+    </header>
+    <div class="pad">
+      <div id="lib-filters" class="chips" role="group" aria-label="Show"></div>
+      <div id="lib-grid" class="media-grid"></div>
+      <p id="lib-storage" class="muted tiny center"></p>
+    </div>
+  </section>
+
+  <!-- 4K ENHANCE -->
+  <section id="screen-enhance" class="screen" hidden aria-label="4K Enhance">
+    <header class="app-head">
+      <h1 class="title">4K Enhance</h1>
+    </header>
+    <div class="pad" id="enhance-body"></div>
+  </section>
+
+  <!-- EDITOR -->
+  <section id="screen-editor" class="screen editor" hidden aria-label="Editor"></section>
+
+  <!-- VIEWER -->
+  <section id="screen-viewer" class="screen viewer" hidden aria-label="Video player"></section>
+
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <button data-tab="home" aria-current="page"><span aria-hidden="true">✦</span>Create</button>
+    <button data-tab="library"><span aria-hidden="true">▤</span>Library</button>
+    <button data-tab="enhance"><span aria-hidden="true">4K</span>Enhance</button>
+  </nav>
+
+  <div id="sheet" hidden></div>
+  <div id="busy" hidden></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
